@@ -23,7 +23,10 @@ func parsePackage(data string) (int, time.Duration, error) {
 	}
 	duration, err := time.ParseDuration(parsedData[1])
 	if err != nil {
-		return 0, 0, err // Возвращаем 0 для steps и duration, и ошибку
+		return 0, 0, err
+	}
+	if len(parsedData) != 3 {
+		return 0, 0, fmt.Errorf("invalid data format")
 	}
 	return steps, duration, nil
 }

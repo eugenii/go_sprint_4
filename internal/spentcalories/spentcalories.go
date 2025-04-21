@@ -101,7 +101,7 @@ func TrainingInfo(data string, weight, height float64) (string, error) {
 	case "Бег":
 		calories, calcErr = RunningSpentCalories(steps, weight, height, duration)
 	default:
-		return "неизвестный тип тренировки", fmt.Errorf("неизвестный тип тренировки")
+		return "", fmt.Errorf("неизвестный тип тренировки")
 	}
 
 	if calcErr != nil {
@@ -110,10 +110,10 @@ func TrainingInfo(data string, weight, height float64) (string, error) {
 
 	info := fmt.Sprintf(
 		"Тип тренировки: %s\n"+
-			"Длительность: %.3f ч.\n"+
+			"Длительность: %.2f ч.\n"+
 			"Дистанция: %.2f км.\n"+
 			"Скорость: %.2f км/ч\n"+
-			"Сожгли калорий: %.2f",
+			"Сожгли калорий: %.2f\n",
 		activity,
 		hours,
 		dist,

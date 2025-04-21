@@ -5,10 +5,11 @@ import (
 	"log"
 	"os"
 
-	"go_sprint_4/internal/daysteps"
-	"go_sprint_4/internal/spentcalories"
-	// "github.com/Yandex-Practicum/tracker/internal/daysteps"
-	// "github.com/Yandex-Practicum/tracker/internal/spentcalories"
+	// Вариант для локального тестирования
+	// "go_sprint_4/internal/daysteps"
+	// "go_sprint_4/internal/spentcalories"
+	"github.com/Yandex-Practicum/tracker/internal/daysteps"
+	"github.com/Yandex-Practicum/tracker/internal/spentcalories"
 )
 
 func main() {
