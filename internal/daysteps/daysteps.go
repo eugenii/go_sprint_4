@@ -18,17 +18,17 @@ func parsePackage(data string) (int, time.Duration, error) {
 
 	parts := strings.Split(data, ",")
 	if len(parts) != 2 {
-		return 0, 0, fmt.Errorf("conversion error: %w", err)
+		return 0, 0, fmt.Errorf("invalid data format")
 	}
 	if strings.Contains(parts[0], " ") {
-		return 0, 0, fmt.Errorf("conversion error: %w", err)
+		return 0, 0, fmt.Errorf("invalid steps format")
 	}
 	steps, err := strconv.Atoi(parts[0])
 	if err != nil {
-		return 0, 0, fmt.Errorf("conversion error: %w", err)
+		return 0, 0, fmt.Errorf("invalid steps format")
 	}
 	if steps <= 0 {
-		return 0, 0, fmt.Errorf("conversion error: %w", err)
+		return 0, 0, fmt.Errorf("invalid steps value")
 	}
 
 	durStr := strings.TrimSpace(parts[1])
