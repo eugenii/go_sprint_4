@@ -34,7 +34,7 @@ func parsePackage(data string) (int, time.Duration, error) {
 	durStr := strings.TrimSpace(parts[1])
 	duration, err := time.ParseDuration(durStr)
 	if err != nil {
-		return 0, 0, fmt.Errorf("invalid duration format")
+		return 0, 0, fmt.Errorf("conversion error: %w", err)
 	}
 	if duration <= 0 {
 		return 0, 0, fmt.Errorf("invalid duration value")
