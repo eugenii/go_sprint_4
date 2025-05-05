@@ -25,7 +25,7 @@ func parsePackage(data string) (int, time.Duration, error) {
 	}
 	steps, err := strconv.Atoi(parts[0])
 	if err != nil {
-		return 0, 0, fmt.Errorf("invalid steps format")
+		return 0, 0, fmt.Errorf("conversion error: %w", err)
 	}
 	if steps <= 0 {
 		return 0, 0, fmt.Errorf("invalid steps value")
